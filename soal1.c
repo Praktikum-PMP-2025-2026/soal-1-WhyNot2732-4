@@ -43,7 +43,7 @@ int main()
             maxId = i;
             max = temp;
         }
-        if (temp == 0){
+        if ((temp == 0) && (iso == -1)){
             iso = i;
         }
     }
