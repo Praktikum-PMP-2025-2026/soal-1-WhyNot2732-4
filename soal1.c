@@ -18,7 +18,7 @@ int main()
     char* tok;
     int temp, max, maxId, iso;
     max = -1;
-    iso = -1;
+    iso = 0;
 
     fgets(input, 100, stdin);
     tok = strtok(input, " ");
@@ -48,6 +48,7 @@ int main()
     printf("MAX_VERTEX %d\n", maxId);
 
     printf("ISOLATED ");  
+    
     for (int i = 0; i < N; i++){
         temp = 0;
         for (int j = 0; j < N; j++){
@@ -55,11 +56,16 @@ int main()
         }
         if (temp == 0){
             printf("%d", i);
+            iso++;
             if (i != N-1){
                 printf(" ");
             }
         }
     }
+    if (iso == 0){
+        printf("NONE");
+    }
+    
     printf("\n");
     return 0;
 }
