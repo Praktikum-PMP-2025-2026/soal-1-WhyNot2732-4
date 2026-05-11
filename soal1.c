@@ -43,17 +43,24 @@ int main()
             maxId = i;
             max = temp;
         }
-        if ((temp == 0) && (iso == -1)){
-            iso = i;
-        }
     }
 
     printf("MAX_VERTEX %d\n", maxId);
-    if (iso > -1){
-        printf("ISOLATED %d\n", iso);
-    } else{
-        printf("ISOLATED NONE\n");
+
+    printf("ISOLATED ");  
+    for (int i = 0; i < N; i++){
+        temp = 0;
+        for (int j = 0; j < N; j++){
+            temp += mat[i][j];
+        }
+        if (temp == 0){
+            printf("%d", i);
+            if (i != N-1){
+                printf(" ");
+            }
+        }
     }
+    printf("\n");
     return 0;
 }
 
